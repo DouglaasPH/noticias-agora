@@ -6,34 +6,20 @@ var nav_link_in_the_nav_vertical = document.querySelectorAll(
   ".nav_link_in_the_nav_vertical"
 );
 
-function clickedNavLink(buttonClicked, location) {
-  if (location == "header") {
-    nav_link_in_the_header.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav_link_in_the_header.forEach((l) => l.classList.remove("active")); // Remove de todos
-        link.classList.add("active"); // Adiciona ao clicado
-      });
-    });
+function action(currentButton, type) {
+  if (type == "header") {
+    nav_link_in_the_header.forEach((l) => l.classList.remove("active"));
   } else {
-    nav_link_in_the_nav_vertical.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav_link_in_the_nav_vertical.forEach((l) =>
-          l.classList.remove("active")
-        ); // Remove de todos
-        link.classList.add("active"); // Adiciona ao clicado
-      });
-    });
+    nav_link_in_the_nav_vertical.forEach((l) => l.classList.remove("active"));
   }
+
+  currentButton.classList.add("active");
 }
 
-for (let i = 0; i < nav_link_in_the_header.length; i++) {
-  nav_link_in_the_header[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    clickedNavLink(nav_link_in_the_header[i], "header");
-  });
+nav_link_in_the_header.forEach((link) => {
+  link.addEventListener("click", () => action(link, "header"));
+});
 
-  nav_link_in_the_nav_vertical[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    clickedNavLink(nav_link_in_the_nav_vertical[i], "nav_vertical");
-  });
-}
+nav_link_in_the_nav_vertical.forEach((link) => {
+  link.addEventListener("click", () => action(link, "nav_vertical"));
+});
