@@ -1,0 +1,64 @@
+:root {
+  /* 🎨 Cores principais */
+  --bs-primary: #676769ff;
+  --bs-danger: #d62828;
+  --bs-dark: #1c1c1e;
+  --bs-light: #f8f9fa;
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #282829ff;
+
+  /* 🎯 Texto secundário */
+  --bs-secondary: #4b4b4b;
+
+  /* 🔳 Outros tons neutros */
+  --bs-border-color: #e0e0e0;
+
+  /* 🖋 Tipografia */
+  --bs-body-font-family: "Inter", sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.6;
+
+  /* Botões */
+  --bs-btn-border-radius: 0.25rem;
+}
+
+.div-logo-img {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fakeimg {
+  height: 200px;
+  background: #aaa;
+}
+
+.img-materia {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--bs-primary) !important;
+}
+
+.navbar,
+.footbar {
+  background-color: var(--bs-body-color) !important;
+}
+
+.nav-link {
+  color: var(--bs-danger) !important; /* cor dos links normais */
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--bs-danger) !important; /* cor no hover */
+}
+
+.nav-link.active {
+  background-color: var(--bs-danger) !important; /* cor do link ativo */
+  color: white !important; /* cor do link ativo */
+  border-radius: 10px;
+}
